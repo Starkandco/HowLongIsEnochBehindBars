@@ -8,8 +8,10 @@
             text-align: center;
             background-color: #f9f9f9;
             display: flex;
-            height: 100vh; 
-            margin: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set the body height to 100% of the viewport height */
+            margin: 0; /* Remove default margin */
         }
         h1 {
             color: #333;
@@ -19,23 +21,25 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        .result-text {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <h1>Days that Enoch has been behind bars</h1>
     <p id="result"></p>
+    <p class="result-text" id="result-text"></p>
 
     <script>
         function calculateDays() {
             const enochsSecondStint = new Date("2023-09-09");
-
             const today = new Date();
-
             const timeDifference = today - enochsSecondStint;
-
             const daysSince = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-            document.getElementById("result").textContent = `Days since ${enochsSecondStint.toDateString()}: ${daysSince} days`;
+            document.getElementById("result").textContent = `Days since ${enochsSecondStint.toDateString()}:`;
+            document.getElementById("result-text").textContent = `${daysSince} days`;
         }
         calculateDays();
     </script>
