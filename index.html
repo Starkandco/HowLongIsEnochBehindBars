@@ -10,26 +10,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Set the body height to 100% of the viewport height */
-            margin: 0; /* Remove default margin */
+            height: 100vh;
+            margin: 0; 
         }
         h1 {
             color: #333;
         }
-        p {
+        .result-container {
             font-size: 18px;
             font-weight: bold;
             margin-top: 20px;
-        }
-        .result-text {
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <h1>Days that Enoch has been behind bars</h1>
-    <p id="result"></p>
-    <p class="result-text" id="result-text"></p>
+    <div class="result-container">
+        <p id="result"></p>
+        <p id="result-text"></p>
+    </div>
 
     <script>
         function calculateDays() {
@@ -38,7 +37,7 @@
             const timeDifference = today - enochsSecondStint;
             const daysSince = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-            document.getElementById("result").textContent = `Days since ${enochsSecondStint.toDateString()}:`;
+            document.getElementById("result").textContent = `Since ${enochsSecondStint.toDateString()}:`;
             document.getElementById("result-text").textContent = `${daysSince} days`;
         }
         calculateDays();
