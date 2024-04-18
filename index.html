@@ -1,44 +1,41 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Enoch's Second Stint</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f9f9f9;
+        html, body {
+            height: 100%;
+            margin: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0; 
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
         }
         h1 {
             color: #333;
+            margin: 0;
+            padding-bottom: 20px; 
         }
-        .result-container {
+        p {
             font-size: 18px;
             font-weight: bold;
-            margin-top: 20px;
+            margin: 0; 
         }
     </style>
 </head>
 <body>
-    <h1>Days that Enoch has been behind bars</h1>
-    <div class="result-container">
+    <div class="content">
+        <h1>Days that Enoch has been behind bars</h1>
         <p id="result"></p>
-        <p id="result-text"></p>
     </div>
-
     <script>
         function calculateDays() {
             const enochsSecondStint = new Date("2023-09-09");
             const today = new Date();
             const timeDifference = today - enochsSecondStint;
             const daysSince = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-            document.getElementById("result").textContent = `Since ${enochsSecondStint.toDateString()}:`;
-            document.getElementById("result-text").textContent = `${daysSince} days`;
+            document.getElementById("result").textContent = `Days since ${enochsSecondStint.toDateString()}: ${daysSince} days`;
         }
         calculateDays();
     </script>
