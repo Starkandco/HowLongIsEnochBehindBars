@@ -1,7 +1,30 @@
 <!DOCTYPE html>
-  <html>
-  <body>
-  <h1>Hello World</h1>
-  <p>I'm hosted with GitHub Pages.</p>
-  </body>
+<html>
+<head>
+    <title>Days Since Specific Date</title>
+</head>
+<body>
+    <h1>Days Since Specific Date</h1>
+    <p>Enter a specific date:</p>
+    <form id="dateForm">
+        <input type="text" id="specificDate" value="2022-01-01" readonly>
+        <input type="button" value="Calculate" onclick="calculateDays()">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateDays() {
+            const enochsSecondStint = new Date("2023-09-09");
+
+            const today = new Date();
+
+            const timeDifference = today - specificDate;
+
+            const daysSince = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+            document.getElementById("result").textContent = `Days since ${specificDate.toDateString()}: ${daysSince} days`;
+        }
+        calculateDays();
+    </script>
+</body>
 </html>
