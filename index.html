@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Days Since Specific Date</title>
+    <title>Enoch's Second Stint</title>
 </head>
 <body>
-    <h1>Days Since Specific Date</h1>
-    <p>Enter a specific date:</p>
-    <form id="dateForm">
-        <input type="text" id="specificDate" value="2022-01-01" readonly>
-        <input type="button" value="Calculate" onclick="calculateDays()">
-    </form>
+    <h1>Days that Enoch has been behind bars</h1>
     <p id="result"></p>
 
     <script>
@@ -18,11 +13,11 @@
 
             const today = new Date();
 
-            const timeDifference = today - specificDate;
+            const timeDifference = today - enochsSecondStint;
 
             const daysSince = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-            document.getElementById("result").textContent = `Days since ${specificDate.toDateString()}: ${daysSince} days`;
+            document.getElementById("result").textContent = `Days since ${enochsSecondStint.toDateString()}: ${daysSince} days`;
         }
         calculateDays();
     </script>
